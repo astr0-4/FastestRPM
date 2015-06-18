@@ -36,7 +36,7 @@
 
     if(magnitude < 6000) {
         NSLog(@"magnitude 1: %lf", magnitude);
-        float translator = magnitude/50;
+        float translator = magnitude/240;
         self.needle.transform = CGAffineTransformMakeRotation(translator*M_PI/180 - 40*M_PI/180);
         NSLog(@"translator: %lf", translator);
     }
@@ -51,6 +51,25 @@
     }
     
 }
+
+
+-(void)doFancyAnimation {
+    CALayer* layer = self.needle.layer;
+    CABasicAnimation* animation;
+    animation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
+    
+    animation.fromValue = [NSNumber numberWithFloat: -40*M_PI/180];
+    animation.toValue = [NSNumber numberWithFloat:240*M_PI/180];
+    
+    animation.duration = 1.0;
+    animation.cumulative = YES;
+    animation.repeatCount = 0;
+    animation.removedOnCompletion = YES;
+    animation.fillMode = kCAFillModeForwards;
+    
+    [layer addAnimation:animation forKey:@"transform.rotation.z"];
+}
+
 
 -(void)doAnimation {
     [UIView animateWithDuration:1.0 delay:0.0 options:0 animations:^{
