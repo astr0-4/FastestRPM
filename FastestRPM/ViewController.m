@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    _needle.transform = CGAffineTransformRotate(_needle.transform, -40*M_PI/180);
 }
 
 - (void)didReceiveMemoryWarning {
