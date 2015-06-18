@@ -12,5 +12,9 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *needle;
 
+@property (nonatomic, strong) NSTimer *timer;
+
+- (IBAction)handlePan:(UIPanGestureRecognizer *)recognizer;
+
 @end
 

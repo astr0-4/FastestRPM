@@ -19,13 +19,10 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="speedometer" translatesAutoresizingMaskIntoConstraints="NO" id="Sxb-5U-Kfv">
                                 <rect key="frame" x="16" y="121" width="288" height="300"/>
-                                <gestureRecognizers/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="hGc-mW-K5H" appends="YES" id="GBd-hr-Dcs"/>
-                                </connections>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="spinner" translatesAutoresizingMaskIntoConstraints="NO" id="0Fs-ub-YOP">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="spinner" translatesAutoresizingMaskIntoConstraints="NO" id="0Fs-ub-YOP">
                                 <rect key="frame" x="40" y="207" width="240" height="128"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="3nK-3o-a6Q"/>
                                     <constraint firstAttribute="height" constant="128" id="wSk-D1-LKW"/>
@@ -33,20 +30,29 @@
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="0Fs-ub-YOP" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-20" id="3fl-xq-0Ai"/>
                             <constraint firstItem="0Fs-ub-YOP" firstAttribute="centerY" secondItem="Sxb-5U-Kfv" secondAttribute="centerY" id="41L-MD-cUO"/>
                             <constraint firstAttribute="centerY" secondItem="Sxb-5U-Kfv" secondAttribute="centerY" constant="13" id="7Xl-UU-9RM"/>
                             <constraint firstItem="0Fs-ub-YOP" firstAttribute="centerX" secondItem="Sxb-5U-Kfv" secondAttribute="centerX" id="7aH-fN-PCA"/>
+                            <constraint firstAttribute="centerX" secondItem="Sxb-5U-Kfv" secondAttribute="centerX" id="RHR-QW-I2b"/>
                             <constraint firstItem="0Fs-ub-YOP" firstAttribute="leading" secondItem="Sxb-5U-Kfv" secondAttribute="leading" constant="-20" id="xSj-JA-YXW"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="dWd-kO-Mkc" appends="YES" id="Txj-tn-PWR"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="needle" destination="0Fs-ub-YOP" id="dqH-1h-igJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="hGc-mW-K5H"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="dWd-kO-Mkc">
+                    <connections>
+                        <action selector="handlePan:" destination="vXZ-lx-hvc" id="EnU-jJ-2M9"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="201" y="320"/>
         </scene>
